@@ -7,5 +7,5 @@ abstract class CalculatorOperation {
   final String symbol;
   final Icon? icon;
 
-  num operate(num value1, num value2);
+  String operate(String value1, String value2);
 }

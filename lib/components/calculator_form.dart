@@ -38,17 +38,13 @@ class _CalculatorFormState extends State<CalculatorForm> {
     };
   }
 
-  num _parse(String value) {
-    return num.parse(value.replaceAll(',', '.'));
-  }
-
   void _submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
 
       widget.submit(CalculatorFormData(
-        value1: _parse(value1!),
-        value2: _parse(value2!),
+        value1: value1!.replaceAll(',', '.'),
+        value2: value2!.replaceAll(',', '.'),
         operation: selectedOperation,
       ));
 

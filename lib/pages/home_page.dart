@@ -1,6 +1,7 @@
 import 'package:calculadora/components/calculator_form.dart';
 import 'package:calculadora/components/operation_log.dart';
 import 'package:calculadora/models/calculator_form_data.dart';
+import 'package:decimal/decimal.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
   List<OperationLog> logs = [];
 
   void calculate(CalculatorFormData data) {
-    num result = data.operation.operate(data.value1, data.value2);
+    String result = data.operation.operate(data.value1, data.value2);
     setState(() {
       logs.insert(0, OperationLog(data: data, result: result));
     });

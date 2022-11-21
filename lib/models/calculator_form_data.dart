@@ -7,7 +7,7 @@ class CalculatorFormData {
     required this.operation,
   });
 
-  final num value1;
-  final num value2;
+  final String value1;
+  final String value2;
   final CalculatorOperation operation;
 }

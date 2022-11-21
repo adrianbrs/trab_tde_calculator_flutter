@@ -1,4 +1,5 @@
 import 'package:calculadora/models/calculator_operation.dart';
+import 'package:decimal/decimal.dart';
 import 'package:flutter/cupertino.dart';
 
 class MultiplyOperation extends CalculatorOperation {
@@ -9,7 +10,7 @@ class MultiplyOperation extends CalculatorOperation {
             icon: const Icon(CupertinoIcons.multiply));
 
   @override
-  num operate(num value1, num value2) {
-    return value1 * value2;
+  String operate(String value1, String value2) {
+    return (Decimal.parse(value1) * Decimal.parse(value2)).toString();
   }
 }

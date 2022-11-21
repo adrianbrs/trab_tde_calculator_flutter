@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class OperationLog extends StatelessWidget {
-  OperationLog({super.key, required this.data, required this.result});
+  const OperationLog({super.key, required this.data, required this.result});
 
   final CalculatorFormData data;
   final num result;
@@ -27,7 +27,7 @@ class OperationLog extends StatelessWidget {
   }
 
   Widget getTitle() {
-    NumberFormat nf = NumberFormat('###.0#########', 'pt-BR');
+    NumberFormat nf = NumberFormat('###0.0#########', 'pt-BR');
     String value1 = nf.format(data.value1);
     String value2 = nf.format(data.value2);
     String op = operation.symbol;
@@ -35,7 +35,7 @@ class OperationLog extends StatelessWidget {
   }
 
   Widget getSubtitle() {
-    NumberFormat nf = NumberFormat('###.00########', 'pt-BR');
+    NumberFormat nf = NumberFormat('###0.00########', 'pt-BR');
     String resultText = nf.format(result);
     return Text(resultText);
   }
